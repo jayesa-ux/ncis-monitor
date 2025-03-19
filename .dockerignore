@@ -1,0 +1,36 @@
+# Node.js dependencies
+node_modules
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Build artifacts
+dist
+build
+.vite
+
+# Version control
+.git
+.github
+.gitignore
+
+# Development environments
+.idea
+.vscode
+*.swp
+*.swo
+
+# Docker
+Dockerfile
+.dockerignore
+docker-compose*.yml
+nginx/
+
+# Miscellaneous
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+*.log
+README.md

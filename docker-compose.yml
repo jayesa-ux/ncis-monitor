@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+    # Frontend React application
+    web:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        expose:
+            - '80'
+        restart: always
+        networks:
+            - ncis-network
+        environment:
+            - NODE_ENV=production
+
+    # Nginx as reverse proxy
+    nginx:
+        build:
+            context: ./nginx
+            dockerfile: Dockerfile
+        ports:
+            - '80:80'
+        networks:
+            - ncis-network
+        depends_on:
+            - web
+        restart: always
+
+networks:
+    ncis-network:
+        driver: bridge
