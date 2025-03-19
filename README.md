@@ -1,54 +1,112 @@
-# React + TypeScript + Vite
+# NCIS Monitor
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![NCIS Monitor Logo](/logo.svg)
 
-Currently, two official plugins are available:
+## Descripción
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+NCIS Monitor es una aplicación web moderna diseñada para monitorear y gestionar sistemas y playbooks de seguridad. La aplicación proporciona una interfaz de usuario intuitiva para visualizar el estado de los sistemas, ejecutar playbooks y seguir su progreso en tiempo real.
 
-## Expanding the ESLint configuration
+## Tecnologías
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React 19
+- TypeScript
+- Redux Toolkit
+- React Router 7
+- Material UI 6
+- Vite 6
 
-```js
-export default tseslint.config({
-    extends: [
-        // Remove ...tseslint.configs.recommended and replace with this
-        ...tseslint.configs.recommendedTypeChecked,
-        // Alternatively, use this for stricter rules
-        ...tseslint.configs.strictTypeChecked,
-        // Optionally, add this for stylistic rules
-        ...tseslint.configs.stylisticTypeChecked,
-    ],
-    languageOptions: {
-        // other options...
-        parserOptions: {
-            project: ['./tsconfig.node.json', './tsconfig.app.json'],
-            tsconfigRootDir: import.meta.dirname,
-        },
-    },
-});
+## Características
+
+- **Autenticación de usuario:** Sistema de login seguro
+- **Dashboard de sistemas:** Visualización y gestión de múltiples sistemas
+- **Monitoreo de playbooks:** Seguimiento en tiempo real del estado de los playbooks
+- **Consola de ejecución:** Visualización de logs de ejecución
+- **Flujo de ejecución:** Seguimiento visual de los pasos del playbook
+- **Interfaz adaptativa:** Diseño responsive para diferentes dispositivos
+
+## Requisitos previos
+
+- Node.js 18+
+- npm o yarn
+
+## Instalación
+
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/tu-usuario/ncis-monitor.git
+   cd ncis-monitor
+   ```
+
+2. Instala las dependencias:
+   ```bash
+   npm install
+   ```
+
+3. Inicia el servidor de desarrollo:
+   ```bash
+   npm run dev
+   ```
+
+4. Para producción, construye la aplicación:
+   ```bash
+   npm run build
+   ```
+
+## Uso
+
+### Credenciales de acceso
+
+- **Usuario:** admin
+- **Contraseña:** admin
+
+### Estructura de la aplicación
+
+- **Login:** Página de inicio de sesión
+- **Home:** Lista de sistemas disponibles y sus playbooks
+- **Dashboard:** Monitorización detallada de un playbook específico
+  - Información del playbook
+  - Consola de ejecución
+  - Flujo de ejecución (pasos del playbook)
+
+## Desarrollo
+
+### Scripts disponibles
+
+- `npm run dev` - Inicia el servidor de desarrollo
+- `npm run build` - Construye la aplicación para producción
+- `npm run lint` - Ejecuta el linter para verificar el código
+- `npm run preview` - Previsualiza la versión construida
+
+### Estructura de archivos
+
+```
+ncis-monitor/
+├── public/
+│   └── logo.svg
+├── src/
+│   ├── components/      # Componentes reutilizables
+│   ├── pages/           # Páginas principales
+│   ├── services/        # Servicios para API y autenticación
+│   ├── redux/           # Configuración de Redux
+│   ├── types/           # Tipos de TypeScript
+│   ├── Context/         # Contextos de React
+│   ├── App.tsx          # Componente principal
+│   └── main.tsx         # Punto de entrada
+└── ...
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## API Backend
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x';
-import reactDom from 'eslint-plugin-react-dom';
+La aplicación está configurada para conectarse a un backend a través de un proxy en http://localhost:5000. Puedes modificar esta configuración en el archivo `vite.config.ts`.
 
-export default tseslint.config({
-    plugins: {
-        // Add the react-x and react-dom plugins
-        'react-x': reactX,
-        'react-dom': reactDom,
-    },
-    rules: {
-        // other rules...
-        // Enable its recommended typescript rules
-        ...reactX.configs['recommended-typescript'].rules,
-        ...reactDom.configs.recommended.rules,
-    },
-});
-```
+## Contribuir
+
+1. Haz un fork del proyecto
+2. Crea una rama para tu feature (`git checkout -b feature/nueva-funcionalidad`)
+3. Commit tus cambios (`git commit -m 'Agrega nueva funcionalidad'`)
+4. Push a la rama (`git push origin feature/nueva-funcionalidad`)
+5. Abre un Pull Request
+
+## Licencia
+
+Este proyecto está bajo la Licencia MIT - ver el archivo LICENSE para más detalles.
