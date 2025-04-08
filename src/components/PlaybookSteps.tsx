@@ -50,21 +50,21 @@ const PlaybookSteps: FC<PlaybookStepsProps> = ({ playbookId, updateTrigger }) =>
 
     const getStepIcon = (check: boolean, active: boolean) => {
         if (!active && check) return '✅';
-        if (active && !check) return '▶';
+        if (active && check) return '▶';
         if (!active && !check) return '☐';
         return '☐';
     };
 
     const getStepColor = (check: boolean, active: boolean) => {
         if (!active && check) return '#4caf50';
-        if (active && !check) return '#2196f3';
+        if (active && check) return '#2196f3';
         if (!active && !check) return '#757575';
         return '#757575';
     };
 
     const getStepStatusText = (check: boolean, active: boolean) => {
         if (!active && check) return 'Completado';
-        if (active && !check) return 'En ejecución';
+        if (active && check) return 'En ejecución';
         if (!active && !check) return 'No iniciado';
         return 'No iniciado';
     };
